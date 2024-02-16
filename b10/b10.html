@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pop-over</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <h1 class="display-6 ">Pop-over Example</h1><br><br>
+    <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="popover" data-bs-title="login Steps" data-bs-content="1.Download the Facebook app.
+    2.Open the Facebook app. 
+    3.Enter your email address or phone number.">Login</button>
+
+<br><br><br><br>
+<h1 class="display-6">Tooltip Example</h1><br>
+    <button type="button" class="btn btn-secondary"
+data-bs-toggle="tooltip" data-bs-placement="top"
+data-bs-custom-class="custom-tooltip"
+data-bs-title="bootstrap">
+<i class="bi bi-bootstrap"></i>
+</button>
+
+<button type="button" class="btn btn-secondary"
+data-bs-toggle="tooltip" data-bs-placement="top"
+data-bs-custom-class="custom-tooltip"
+data-bs-title="meta">
+<i class="bi bi-meta"></i>
+</button>
+
+<button type="button" class="btn btn-secondary"
+data-bs-toggle="tooltip" data-bs-placement="top"
+data-bs-custom-class="custom-tooltip"
+data-bs-title="messenger">
+<i class="bi bi-messenger"></i>
+</button>
+
+
+
+<br><br><br><br>
+<h1 class="display-6">Toast Example</h1><br>
+<button type="button" class="btn btn-primary" id="liveToastBtn">Show live Blog</button>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="logo.jpg" class="rounded me-2" alt="..." width="50px" height="40px">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! <br>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, voluptatibus. Illum qui ad ipsam cupiditate placeat, laborum quidem itaque est eaque accusantium. Eaque eligendi ea deserunt magnam error. Dolor, eos.
+    </div>
+  </div>
+</div>
+
+</body>
+<script>
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+</script>
+
+
+
+
+
+<script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+
+
+
+
+<script>
+    const toastTrigger = document.getElementById('liveToastBtn')
+    const toastLiveExample = document.getElementById('liveToast')
+    
+    if (toastTrigger) {
+      const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+      toastTrigger.addEventListener('click', () => {
+        toastBootstrap.show()
+      })
+    }
+    </script>
+</html>
